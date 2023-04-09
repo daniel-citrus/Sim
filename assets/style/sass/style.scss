@@ -194,15 +194,13 @@ button {
     border-radius: 4px;
     background: var(--button-not-selected);
     padding: 13px;
-}
 
-button:hover {
-    transition: all 0.2s ease-in-out;
-    /* background: #2291db;
-    border: 1px solid #2291db; */
-    background: var(--text-or-background);
-    color: var(--text-on-hover);
-    cursor: pointer;
+    :hover {
+        transition: all 0.2s ease-in-out;
+        background: var(--text-or-background);
+        color: var(--text-on-hover);
+        cursor: pointer;
+    }
 }
 
 div[marker='0'] {
@@ -217,68 +215,67 @@ div[marker='1'] {
     height: 500px;
     width: 320px;
     position: relative;
-
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-}
 
-.board.disabled {
-    pointer-events: none;
-}
+    &.disabled {
+        pointer-events: none;
+    }
 
-.board div[marker='0'],
-.board div[marker='0']:hover,
-.board.p2 div[marker='0'],
-.board.p2 div[marker='0']:hover {
-    background: var(--player1-color);
-}
+    div[marker='0'],
+    div[marker='0']:hover,
+    &.p2 div[marker='0'],
+    &.p2 div[marker='0']:hover {
+        background: var(--player1-color);
+    }
 
-.board div[marker='0']:hover,
-.board.p2 div[marker='0']:hover {
-    box-shadow: 0px 0px 5px var(--player1-hover);
-}
+    div[marker='0']:hover,
+    &.p2 div[marker='0']:hover {
+        box-shadow: 0px 0px 5px var(--player1-hover);
+    }
 
-.board div[marker='1'],
-.board div[marker='1']:hover,
-.board.p2 div[marker='1'],
-.board.p2 div[marker='1']:hover {
-    background: var(--player2-color);
-}
+    div[marker='1'],
+    div[marker='1']:hover,
+    &.p2 div[marker='1'],
+    &.p2 div[marker='1']:hover {
+        background: var(--player2-color);
+    }
 
-.board div[marker='1']:hover,
-.board.p2 div[marker='1']:hover {
-    box-shadow: 0px 0px 5px var(--player2-hover);
-}
+    div[marker='1']:hover,
+    &.p2 div[marker='1']:hover {
+        box-shadow: 0px 0px 5px var(--player2-hover);
+    }
 
-.board .line:hover {
-    background: var(--player1-color);
-    z-index: 29;
-    box-shadow: 0px 0px 5px var(--player1-hover);
-    border: 1px solid --player1-color;
-}
+    .line:hover {
+        background: var(--player1-color);
+        z-index: 29;
+        box-shadow: 0px 0px 5px var(--player1-hover);
+        border: 1px solid --player1-color;
+    }
 
-.board.p2 .line:hover {
-    background: var(--player2-color);
-    box-shadow: 0px 0px 5px var(--player2-hover);
-    border: 1px solid --player2-color;
+    &.p2 .line:hover {
+        background: var(--player2-color);
+        box-shadow: 0px 0px 5px var(--player2-hover);
+        border: 1px solid --player2-color;
+    }
 }
 
 .game {
     display: none;
     flex-flow: column nowrap;
-}
 
-.game .board {
-    margin: 0 auto;
-}
+    .board {
+        margin: 0 auto;
+    }
 
-.game .buttons {
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 10px;
-    padding: 10px;
+    .buttons {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 10px;
+        padding: 10px;
+    }
 }
 
 .line {
@@ -397,42 +394,42 @@ div[marker='1'] {
         flex-flow: column nowrap;
         justify-content: center;
         gap: 10px;
-
         min-height: 100vh;
+
+        fieldset {
+            display: grid;
+            gap: 5px;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        label {
+            display: block;
+            padding: 15px 0;
+            border: 1px solid var(--button-not-selected);
+            color: #b3b3b3;
+            font-size: 1.6rem;
+            border-radius: 4px;
+        }
+
+        label:hover {
+            background: rgb(83, 83, 83);
+            border: 1px solid rgb(83, 83, 83);
+            transition: all 0.2s ease-in-out;
+            color: #7ACAFF;
+            cursor: pointer;
+        }
+
+        >div {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
     }
-}
 
-.starter form>div {
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 5px;
-    margin-bottom: 10px;
-}
-
-.starter form fieldset {
-    display: grid;
-    gap: 5px;
-}
-
-.starter form label {
-    display: block;
-    padding: 15px 0;
-    border: 1px solid var(--button-not-selected);
-    color: #b3b3b3;
-    font-size: 1.6rem;
-    border-radius: 4px;
-}
-
-.starter form input[type="radio"] {
-    display: none;
-}
-
-.starter form label:hover {
-    background: rgb(83, 83, 83);
-    border: 1px solid rgb(83, 83, 83);
-    transition: all 0.2s ease-in-out;
-    color: #7ACAFF;
-    cursor: pointer;
 }
 
 .starter .title,

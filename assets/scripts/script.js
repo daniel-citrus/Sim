@@ -5,6 +5,11 @@ const lines = document.querySelectorAll('.line');
 const resetButton = document.getElementById('restartGame');
 const startButton = document.getElementById('startGame');
 const starterForm = document.querySelector('.starter');
+const startGamemode = document.querySelectorAll(`.gamemode input[type='radio"`);
+
+startGamemode.addEventListener('click', (e) => {
+    console.log(e.target);
+})
 
 exitButton.addEventListener('click', () => {
     director.exitGame();

@@ -384,7 +384,6 @@ div[marker='1'] {
     text-align: center;
     gap: 20px;
     padding: 10px;
-
     font-family: 'Indie_Flower';
     font-size: 1.7rem;
     color: var(--negativespace-or-accents);
@@ -399,6 +398,16 @@ div[marker='1'] {
         fieldset {
             display: grid;
             gap: 5px;
+        }
+
+        input+label:hover {
+            background: rgb(82, 82, 82);
+        }
+
+        input:checked+label {
+            color: black;
+            background: var(--headings-or-accents);
+            border: 1px solid var(--headings-or-accents);
         }
 
         input[type="radio"] {
@@ -430,90 +439,81 @@ div[marker='1'] {
         }
     }
 
-}
+    .difficulty {
+        input+label[for='easy']:hover {
+            color: #c7db98;
+        }
 
-.starter .title,
-.starter form .title {
-    font-size: 1.7rem;
-    font-family: 'Nunito';
-}
+        input+label[for='medium']:hover {
+            color: #ffe289;
+        }
 
-.starter form input:checked+label {
-    color: black;
-    background: var(--headings-or-accents);
-    border: 1px solid var(--headings-or-accents);
-}
+        input+label[for='hard']:hover {
+            color: #e09994;
+        }
 
-.starter input+label:hover {
-    background: rgb(82, 82, 82);
-}
+        input:checked+label[for='easy'] {
+            color: black;
+            background: #c7db98;
+            border: 1px solid #859464;
+        }
 
-.starter .difficulty input+label[for='easy']:hover {
-    color: #c7db98;
-}
+        input:checked+label[for='medium'] {
+            color: black;
+            background: #ffe289;
+            border: 1px solid #af9956;
+        }
 
-.starter .difficulty input+label[for='medium']:hover {
-    color: #ffe289;
-}
+        input:checked+label[for='hard'] {
+            color: black;
+            background: #e09994;
+            border: 1px solid #995a56;
+        }
+    }
 
-.starter .difficulty input+label[for='hard']:hover {
-    color: #e09994;
-}
+    .header {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        height: 100vh;
 
-.starter .difficulty input:checked+label[for='easy'] {
-    color: black;
-    background: #c7db98;
-    border: 1px solid #859464;
-}
+        img {
+            padding: 20px;
+            max-width: 300px;
+        }
 
-.starter .difficulty input:checked+label[for='medium'] {
-    color: black;
-    background: #ffe289;
-    border: 1px solid #af9956;
-}
+        .main {
+            font-family: 'Fredericka_the_Great';
+            font-size: 5rem;
+        }
 
-.starter .difficulty input:checked+label[for='hard'] {
-    color: black;
-    background: #e09994;
-    border: 1px solid #995a56;
-}
+        .sub {
+            font-family: 'Indie_Flower';
+            font-size: 1.25rem;
+        }
 
-.starter .header {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    height: 100vh;
-}
+        .title {
+            color: var(--negativespace-or-accents);
+        }
+    }
 
-.starter .header img {
-    padding: 20px;
-    max-width: 300px;
-}
+    .how-to {
+        min-height: 100vh;
+    }
 
-.starter .header .main {
-    font-family: 'Fredericka_the_Great';
-    font-size: 5rem;
-}
+    .tips {
+        text-align: start;
+        font-size: 1.3rem;
+        font-family: 'Nunito';
+    }
 
-.starter .header .sub {
-    font-family: 'Indie_Flower';
-    font-size: 1.25rem;
-}
-
-.starter .header .title {
-    color: var(--negativespace-or-accents);
-}
-
-.starter .how-to {
-    min-height: 100vh;
-}
-
-.starter .tips {
-    text-align: start;
-    font-size: 1.3rem;
-    font-family: 'Nunito';
+    .title,
+    form .title {
+        font-size: 1.7rem;
+        font-family: 'Nunito';
+    }
 }
 
 @media screen and (min-width: 769px) {

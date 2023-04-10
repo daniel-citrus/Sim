@@ -238,6 +238,11 @@ div[marker='1'] {
             border: 1px solid --player1-color;
         }
 
+        .losingTriangle {
+            box-shadow:none;
+            z-index: 100;
+        }
+
         div[marker='0']:hover {
             box-shadow: none;
         }

@@ -471,9 +471,13 @@ const displayController = (() => {
         return null;
     }
 
+    /* Mark the losing triangle */
     let markTriangle = (triangle) => {
-        for (let line of triangle) {
-            gameBoard.querySelector(`div[coordinates="${line[0]},${line[1]}"]`).classList.add('losingTriangle');
+        for (let triangleLine of triangle) {
+            let line = gameBoard.querySelector(`div[coordinates="${triangleLine[0]},${triangleLine[1]}"]`);
+
+            line.classList.add('losingTriangle');
+            line.style = '';
         }
     }
 

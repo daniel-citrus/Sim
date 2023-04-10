@@ -2,6 +2,7 @@ const exitButton = document.getElementById('exitGame');
 const startFirstPlayer = document.querySelector('.starter .firstPlayer fieldset');
 const game = document.querySelector('.game');
 const gameBoard = game.querySelector('.board');
+const gamePlayersDiv = game.querySelector('.players');
 const lines = document.querySelectorAll('.line');
 const resetButton = document.getElementById('restartGame');
 const startButton = document.getElementById('startGame');
@@ -14,10 +15,16 @@ startGamemode.addEventListener('click', (e) => {
     if (selected == 'computer') {
         startFirstPlayer.querySelector(`label[for='first']`).textContent = 'Player';
         startFirstPlayer.querySelector(`label[for='second']`).textContent = 'Computer';
+
+        gamePlayersDiv.querySelector('.player1').textContent = 'Player';
+        gamePlayersDiv.querySelector('.player2').textContent = 'Computer';
     }
     else if (selected == 'two_player') {
         startFirstPlayer.querySelector(`label[for='first']`).textContent = 'Blue';
         startFirstPlayer.querySelector(`label[for='second']`).textContent = 'Red';
+
+        gamePlayersDiv.querySelector('.player1').textContent = 'Blue';
+        gamePlayersDiv.querySelector('.player2').textContent = 'Red';
     }
 })
 
@@ -113,6 +120,10 @@ let bot = (difficulty) => {
         return [a, b];
     }
 
+    /*
+        Returns a move score depending on how long it takes the match to end.
+        The sooner maximizing player wins the higher the score, the later it wins the lower the score. If the maximizing player loses, the funtion will return a negative score. The sooner the maximizing player loses, the lower the score.
+    */
     function minimax(maximize, currentPlayer, alpha, beta) {
         let possibleMoves = board.getPossibleMoves();
         let movesRemaining = possibleMoves.length;
@@ -124,7 +135,7 @@ let bot = (difficulty) => {
                 return -movesRemaining;
             }
 
-            return 15 - movesRemaining;
+            return Math.max(1, movesRemaining);
         }
 
         if (maximize) {

@@ -1,14 +1,24 @@
 const exitButton = document.getElementById('exitGame');
+const startFirstPlayer = document.querySelector('.starter .firstPlayer fieldset');
 const game = document.querySelector('.game');
 const gameBoard = game.querySelector('.board');
 const lines = document.querySelectorAll('.line');
 const resetButton = document.getElementById('restartGame');
 const startButton = document.getElementById('startGame');
 const starterForm = document.querySelector('.starter');
-const startGamemode = document.querySelectorAll(`.gamemode input[type='radio"`);
+const startGamemode = document.querySelector(`.starter .gamemode fieldset`);
 
 startGamemode.addEventListener('click', (e) => {
-    console.log(e.target);
+    let selected = e.target.value;
+
+    if (selected == 'computer') {
+        startFirstPlayer.querySelector(`label[for='first']`).textContent = 'Player';
+        startFirstPlayer.querySelector(`label[for='second']`).textContent = 'Computer';
+    }
+    else if (selected == 'two_player') {
+        startFirstPlayer.querySelector(`label[for='first']`).textContent = 'Blue';
+        startFirstPlayer.querySelector(`label[for='second']`).textContent = 'Red';
+    }
 })
 
 exitButton.addEventListener('click', () => {
@@ -473,7 +483,7 @@ const displayController = (() => {
     }
 
     let updateCurrentPlayer = (player) => {
-        (player) ? gameBoard.classList.add('p2') : gameBoard.classList.remove('p2');
+        (player) ? game.classList.add('p2') : game.classList.remove('p2');
     }
 
     // Updates 'marker' attribute value

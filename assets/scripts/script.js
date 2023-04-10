@@ -460,7 +460,7 @@ const displayController = (() => {
     }
 
     let showBoard = () => {
-        game.style.display = 'flex';
+        game.style.display = 'grid';
     }
 
     let hideBoard = () => {

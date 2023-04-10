@@ -167,9 +167,6 @@ table {
   src: url(/assets/media/fonts/Nunito/Nunito-VariableFont_wght.ttf);
 }
 body {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
   background: var(--text-or-background);
 }
 
@@ -188,7 +185,7 @@ button {
   background: var(--button-not-selected);
   padding: 13px;
 }
-button :hover {
+button:hover {
   transition: all 0.2s ease-in-out;
   background: var(--text-or-background);
   color: var(--text-on-hover);
@@ -205,7 +202,12 @@ div[marker="1"] {
 
 .game {
   display: none;
-  flex-flow: column nowrap;
+  grid-template: 2fr 7fr 2fr/1fr;
+  align-items: center;
+  max-width: 600px;
+  height: calc(100vh - 30px);
+  padding: 15px 10px;
+  margin: 0 auto;
 }
 .game .board {
   height: 285px;
@@ -215,7 +217,7 @@ div[marker="1"] {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 35px auto;
 }
 .game .board.disabled {
   pointer-events: none;
@@ -399,7 +401,7 @@ div[marker="1"] {
   justify-content: center;
   text-align: center;
   gap: 20px;
-  padding: 10px;
+  padding: 0 10px;
   font-family: "Indie_Flower";
   font-size: 1.7rem;
   color: var(--negativespace-or-accents);
@@ -407,9 +409,12 @@ div[marker="1"] {
 .starter form {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  justify-content: space-around;
   gap: 10px;
   min-height: 100vh;
+}
+.starter form button {
+  margin: 35px 0 0 0;
 }
 .starter form fieldset {
   display: grid;
@@ -495,12 +500,32 @@ div[marker="1"] {
   color: var(--negativespace-or-accents);
 }
 .starter .how-to {
-  min-height: 100vh;
+  min-height: 200vh;
+  display: grid;
+  grid-template: auto 1fr/auto;
+}
+.starter .how-to .title {
+  margin: 0 0 10px 0;
 }
 .starter .tips {
+  display: grid;
+  grid-template: repeat(4, 1fr)/auto;
+  justify-items: center;
   text-align: start;
   font-size: 1.3rem;
   font-family: "Nunito";
+  align-content: center;
+}
+.starter .tips img {
+  background: grey;
+  height: 250px;
+}
+.starter .tips li {
+  flex: 1 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 15px;
+  width: 100%;
 }
 .starter .title,
 .starter form .title {

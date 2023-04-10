@@ -173,9 +173,6 @@ table {
 }
 
 body {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
     background: var(--text-or-background);
 }
 
@@ -195,7 +192,7 @@ button {
     background: var(--button-not-selected);
     padding: 13px;
 
-    & :hover {
+    &:hover {
         transition: all 0.2s ease-in-out;
         background: var(--text-or-background);
         color: var(--text-on-hover);
@@ -213,7 +210,12 @@ div[marker='1'] {
 
 .game {
     display: none;
-    flex-flow: column nowrap;
+    grid-template: 2fr 7fr 2fr/1fr;
+    align-items: center;
+    max-width: 600px;
+    height: calc(100vh - 30px);
+    padding: 15px 10px;
+    margin: 0 auto;
 
     .board {
         height: 285px;
@@ -223,7 +225,7 @@ div[marker='1'] {
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
-        margin: 0 auto;
+        margin: 35px auto;
 
         &.disabled {
             pointer-events: none;
@@ -235,7 +237,7 @@ div[marker='1'] {
             box-shadow: 0px 0px 5px var(--player1-hover);
             border: 1px solid --player1-color;
         }
-        
+
         div[marker='0']:hover {
             box-shadow: none;
         }
@@ -268,7 +270,7 @@ div[marker='1'] {
         text-decoration-color: var(--player1-color);
         color: var(--negativespace-or-accents);
     }
-    
+
     div[marker='1'],
     div[marker='1']:hover {
         background: var(--player2-color);
@@ -288,9 +290,9 @@ div[marker='1'] {
 
         .player2 {
             text-decoration: underline;
-        text-decoration-style: wavy;
-        text-decoration-color: var(--player2-color);
-        color: var(--negativespace-or-accents);
+            text-decoration-style: wavy;
+            text-decoration-color: var(--player2-color);
+            color: var(--negativespace-or-accents);
         }
 
         div[marker='0'],
@@ -425,7 +427,7 @@ div[marker='1'] {
     justify-content: center;
     text-align: center;
     gap: 20px;
-    padding: 10px;
+    padding: 0 10px;
     font-family: 'Indie_Flower';
     font-size: 1.7rem;
     color: var(--negativespace-or-accents);
@@ -433,9 +435,13 @@ div[marker='1'] {
     form {
         display: flex;
         flex-flow: column nowrap;
-        justify-content: center;
+        justify-content: space-around;
         gap: 10px;
         min-height: 100vh;
+
+        button {
+            margin: 35px 0 0 0;
+        }
 
         fieldset {
             display: grid;
@@ -542,13 +548,36 @@ div[marker='1'] {
     }
 
     .how-to {
-        min-height: 100vh;
+        min-height: 200vh;
+        display: grid;
+        grid-template: auto 1fr / auto;
+
+        .title {
+            margin: 0 0 10px 0;
+        }
     }
 
     .tips {
+        display: grid;
+        grid-template: repeat(4, 1fr)/auto;
+        justify-items: center;
         text-align: start;
         font-size: 1.3rem;
-        font-family: 'Nunito';
+        font-family: "Nunito";
+        align-content: center;
+
+        img {
+            background: grey;
+            height: 250px;
+        }
+        
+        li {
+            flex: 1 0 auto;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 15px;
+            width: 100%;
+        }
     }
 
     .title,

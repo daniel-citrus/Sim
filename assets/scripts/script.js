@@ -188,7 +188,6 @@ let bot = (difficulty) => {
         move = dumbMove;
     }
 
-
     return Object.assign(
         {},
         { move }
@@ -329,6 +328,7 @@ const director = (() => {
         winner = (winner) ? 'Red' : 'Blue';
         console.log(`Winner: ${winner}, Triangle: ${losingTriangle}`);
         displayController.disableBoard();
+        displayController.markTriangle(losingTriangle);
     }
 
     let exitGame = () => {
@@ -449,6 +449,7 @@ const displayController = (() => {
         for (let line of lines) {
             line.setAttribute('marker', '')
             line.style.zIndex = '';
+            line.classList.remove('losingTriangle');
         }
     }
 
@@ -468,6 +469,12 @@ const displayController = (() => {
         }
 
         return null;
+    }
+
+    let markTriangle = (triangle) => {
+        for (let line of triangle) {
+            gameBoard.querySelector(`div[coordinates="${line[0]},${line[1]}"]`).classList.add('losingTriangle');
+        }
     }
 
     let showBoard = () => {
@@ -514,6 +521,7 @@ const displayController = (() => {
             disableBoard,
             hideBoard,
             hideStarter,
+            markTriangle,
             resetBoard,
             showBoard,
             showStarter,

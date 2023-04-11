@@ -247,7 +247,7 @@ div[marker='1'] {
             background: var(--player1-color);
             box-shadow: none;
         }
-        
+
         div[marker='1'],
         div[marker='1']:hover {
             background: var(--player2-color);
@@ -549,18 +549,20 @@ div[marker='1'] {
         font-family: "Nunito";
         align-content: center;
 
-        img {
-            background: grey;
-            height: 250px;
-        }
-
         li {
             flex: 1 0 auto;
             display: flex;
             flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
             gap: 15px;
             width: 100%;
+            min-height: 100vh;
         }
+    }
+
+    .triangle-examples {
+        display: grid;
     }
 
     .title,

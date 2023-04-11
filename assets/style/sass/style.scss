@@ -238,11 +238,6 @@ div[marker='1'] {
             border: 1px solid --player1-color;
         }
 
-        .losingTriangle {
-            box-shadow:none;
-            z-index: 100;
-        }
-
         div[marker='0']:hover {
             box-shadow: none;
         }
@@ -251,6 +246,11 @@ div[marker='1'] {
         div[marker='1']:hover {
             background: var(--player2-color);
             box-shadow: none;
+        }
+
+        .losingTriangle {
+            z-index: 100;
+            box-shadow: 0 0 7px #ffcd07;
         }
     }
 
@@ -574,7 +574,7 @@ div[marker='1'] {
             background: grey;
             height: 250px;
         }
-        
+
         li {
             flex: 1 0 auto;
             display: flex;

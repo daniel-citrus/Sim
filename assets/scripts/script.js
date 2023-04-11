@@ -93,7 +93,7 @@ let bot = (difficulty) => {
         if (movesRemaining <= 0) {
             return;
         }
-        else if (movesRemaining > 9) {
+        else if (movesRemaining > 10) {
             return normalMove();
         }
 
@@ -324,6 +324,25 @@ const director = (() => {
         displayController.updateMarker(a, b, currentPlayer);
     }
 
+    let botMove = () => {
+        displayController.disableBoard();
+
+        setTimeout(() => {
+            let [botA, botB] = myBot.move();
+            applyMove(botA, botB);
+            let [gameIsOver, losingTriangle] = board.checkLoser(currentPlayer);
+
+            if (gameIsOver) {
+                endGame(1 - currentPlayer, losingTriangle);
+                return;
+            }
+
+            currentPlayer = 1 - currentPlayer;
+            displayController.updateCurrentPlayer(currentPlayer);
+            displayController.enableBoard();
+        }, 1000);
+    }
+
     let endGame = (winner, losingTriangle) => {
         winner = (winner) ? 'Red' : 'Blue';
         console.log(`Winner: ${winner}, Triangle: ${losingTriangle}`);
@@ -383,36 +402,23 @@ const director = (() => {
         }
 
         currentPlayer = 1 - currentPlayer;
+        displayController.updateCurrentPlayer(currentPlayer);
 
         if (gamemode === 'computer') {
-            let [botA, botB] = myBot.move();
-            applyMove(botA, botB);
-            let [gameIsOver, losingTriangle] = board.checkLoser(currentPlayer);
-
-            if (gameIsOver) {
-                endGame(1 - currentPlayer, losingTriangle);
-                return;
-            }
-            currentPlayer = 1 - currentPlayer;
-        }
-        else {
-            displayController.updateCurrentPlayer(currentPlayer);
+                botMove();
         }
     }
 
     /*
-        Resets game and allows the bot to make the first move if the option is selected
-     */
-    let restartGame = () => {
-        currentPlayer = firstPlayer;
-        displayController.resetBoard(currentPlayer);
-        board.resetBrain();
-
+    Resets game and allows the bot to make the first move if the option is selected
+    */
+   let restartGame = () => {
+       currentPlayer = firstPlayer;
+       displayController.resetBoard(currentPlayer);
+       board.resetBrain();
+       
         if (firstPlayer && gamemode === 'computer') {
-            let [a, b] = myBot.move();
-            applyMove(a, b);
-            currentPlayer = 1 - currentPlayer;
-            displayController.updateCurrentPlayer(currentPlayer);
+                botMove();
         }
     }
 
@@ -523,6 +529,7 @@ const displayController = (() => {
         {},
         {
             disableBoard,
+            enableBoard,
             hideBoard,
             hideStarter,
             markTriangle,

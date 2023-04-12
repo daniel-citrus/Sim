@@ -407,7 +407,6 @@ div[marker='1'] {
 .starter {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
     align-items: center;
     text-align: center;
     gap: 20px;
@@ -561,7 +560,7 @@ div[marker='1'] {
         }
     }
 
-    .triangle-examples {
+    .examples {
         display: grid;
         justify-items: center;
         gap: 10px;
@@ -600,9 +599,7 @@ div[marker='1'] {
                 "form_difficulty form_difficulty"
                 "form_button form_button"
             ;
-
             align-content: center;
-
             max-width: 800px;
             width: 100%;
             min-width: initial;
@@ -625,6 +622,11 @@ div[marker='1'] {
             }
         }
 
+        .examples {
+            grid-template: repeat(3, auto)/ repeat(2, auto);
+            grid-auto-flow: column;
+        }
+
         .firstPlayer {
             grid-area: form_firstPlayer;
         }
@@ -640,9 +642,8 @@ div[marker='1'] {
             }
         }
 
-        .triangle-examples {
-            grid-template: repeat(3, auto)/ repeat(2, auto);
-            grid-auto-flow: column;
+        .triangles {
+            grid-column: 1/-1;
         }
     }
 
@@ -726,13 +727,11 @@ div[marker='1'] {
 @media screen and (min-width: 1025px) {
     .starter {
         .tips {
-            grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+            grid-template: repeat(3, 1fr)/repeat(2, 1fr);
             grid-auto-flow: row;
             justify-content: center;
             align-items: center;
-            width: 60vw;
-            max-width: 850px;
-            gap: 10px 40px;
+            gap: 0 40px;
         }
     }
 }

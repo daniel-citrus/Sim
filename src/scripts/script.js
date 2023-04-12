@@ -101,9 +101,11 @@ let bot = (difficulty) => {
         let score = 0;
         let a, b;
 
+        console.log(`Thinking:`);
         for (let move of possibleMoves) {
             board.update(move[0], move[1], botNumber);
             score = minimax(true, botNumber);
+            console.log(`[${move[0]},${move[1]}]: ${score}`);
             board.remove(move[0], move[1]);
 
             if (bestScore < score) {
@@ -120,9 +122,15 @@ let bot = (difficulty) => {
         return [a, b];
     }
 
-    /*
+    /**
         Returns a move score depending on how long it takes the match to end.
-        The sooner maximizing player wins the higher the score, the later it wins the lower the score. If the maximizing player loses, the funtion will return a negative score. The sooner the maximizing player loses, the lower the score.
+        If the maximizing player wins then minimax will return a score of 1. If the maximizing player loses, the funtion will return a score <= 0.
+        The sooner the maximizing player loses, the lower the score.
+
+        @param maximize - boolean; maximizing player
+        @param currentPlayer - 0 for firstPlayer, 1 for secondPlayer
+        @param alpha - tracks maximizing player's max score
+        @param beta - tracks minimizing player's max score
     */
     function minimax(maximize, currentPlayer, alpha, beta) {
         let possibleMoves = board.getPossibleMoves();
@@ -134,8 +142,9 @@ let bot = (difficulty) => {
             if (maximize) {
                 return -movesRemaining;
             }
-
-            return Math.max(1, movesRemaining);
+            else {
+                return 1;
+            }
         }
 
         if (maximize) {
@@ -226,7 +235,7 @@ const board = (() => {
     }
 
     /** 
-        Recursive function that will check whether or not triangle exists starting on line aInitial to bInitial.
+        Recursive function that will check whether or not triangle exists by searching line by line.
 
         **All incoming parameter values must be integers**
         @param level - nth line of the triangle
@@ -312,7 +321,7 @@ const board = (() => {
     );
 })();
 
-// Controls the game flow
+/* Controls the game flow */
 const director = (() => {
     let myBot;
     let firstPlayer;
@@ -405,20 +414,19 @@ const director = (() => {
         displayController.updateCurrentPlayer(currentPlayer);
 
         if (gamemode === 'computer') {
-                botMove();
+            botMove();
         }
     }
 
-    /*
-    Resets game and allows the bot to make the first move if the option is selected
-    */
-   let restartGame = () => {
-       currentPlayer = firstPlayer;
-       displayController.resetBoard(currentPlayer);
-       board.resetBrain();
-       
+
+    /* Resets game and allows the bot to make the first move if the option is selected */
+    let restartGame = () => {
+        currentPlayer = firstPlayer;
+        displayController.resetBoard(currentPlayer);
+        board.resetBrain();
+
         if (firstPlayer && gamemode === 'computer') {
-                botMove();
+            botMove();
         }
     }
 
@@ -440,7 +448,7 @@ const director = (() => {
     )
 })();
 
-// Controls the front-end
+/* Controls the front-end */
 const displayController = (() => {
     let z_index = 0; // Most recently marked line will appear above all other lines
 
@@ -514,7 +522,7 @@ const displayController = (() => {
         (player) ? game.classList.add('p2') : game.classList.remove('p2');
     }
 
-    // Updates 'marker' attribute value
+    /* Updates 'marker' attribute value */
     let updateMarker = (a, b, player) => {
         let line = findLine(a, b);
 

@@ -207,6 +207,7 @@ div[marker="1"] {
   max-width: 600px;
   height: calc(100vh - 30px);
   padding: 15px 10px;
+  max-height: 1200px;
   margin: 0 auto;
 }
 .game .board {
@@ -540,6 +541,9 @@ div[marker="1"] {
 }
 .starter .examples > div {
   text-decoration: underline;
+}
+.starter .examples .title {
+  margin: 0;
 }
 .starter .examples .description {
   text-decoration: none;

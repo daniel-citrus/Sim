@@ -215,6 +215,7 @@ div[marker='1'] {
     max-width: 600px;
     height: calc(100vh - 30px);
     padding: 15px 10px;
+    max-height: 1200px;
     margin: 0 auto;
 
     .board {
@@ -594,6 +595,10 @@ div[marker='1'] {
 
         &>div {
             text-decoration: underline;
+        }
+
+        .title {
+            margin: 0;
         }
 
         .description {

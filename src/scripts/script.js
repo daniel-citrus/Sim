@@ -18,6 +18,8 @@ startGamemode.addEventListener('click', (e) => {
 
         gamePlayersDiv.querySelector('.player1').textContent = 'Player';
         gamePlayersDiv.querySelector('.player2').textContent = 'Computer';
+
+        starterForm.querySelector('.difficulty').classList.remove('disabled');
     }
     else if (selected == 'two_player') {
         startFirstPlayer.querySelector(`label[for='first']`).textContent = 'Blue';
@@ -25,6 +27,8 @@ startGamemode.addEventListener('click', (e) => {
 
         gamePlayersDiv.querySelector('.player1').textContent = 'Blue';
         gamePlayersDiv.querySelector('.player2').textContent = 'Red';
+
+        starterForm.querySelector('.difficulty').classList.add('disabled');
     }
 })
 

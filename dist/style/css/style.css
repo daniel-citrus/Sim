@@ -507,6 +507,7 @@ div[marker="1"] {
 .starter .how-to {
   display: grid;
   grid-template: auto 1fr/auto;
+  justify-content: center;
 }
 .starter .how-to .title {
   margin: 0 0 20px 0;
@@ -539,6 +540,9 @@ div[marker="1"] {
 }
 .starter .examples > div {
   text-decoration: underline;
+}
+.starter .examples .description {
+  text-decoration: none;
 }
 .starter .title,
 .starter form .title {
@@ -581,8 +585,11 @@ div[marker="1"] {
     flex: 1 0 0;
   }
   .starter .examples {
-    grid-template: repeat(3, auto)/repeat(2, auto);
+    grid-template: repeat(4, auto)/repeat(2, auto);
     grid-auto-flow: column;
+  }
+  .starter .examples .description {
+    grid-column: 1/-1;
   }
   .starter .firstPlayer {
     grid-area: form_firstPlayer;
@@ -661,6 +668,7 @@ div[marker="1"] {
     justify-content: center;
     align-items: center;
     gap: 50px 40px;
+    max-width: 1080px;
   }
   .starter .tips img {
     width: 300px;

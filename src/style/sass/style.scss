@@ -556,6 +556,7 @@ div[marker='1'] {
     .how-to {
         display: grid;
         grid-template: auto 1fr / auto;
+        justify-content: center;
 
         .title {
             margin: 0 0 20px 0;
@@ -593,6 +594,10 @@ div[marker='1'] {
 
         &>div {
             text-decoration: underline;
+        }
+
+        .description {
+            text-decoration: none;
         }
     }
 
@@ -649,8 +654,12 @@ div[marker='1'] {
         }
 
         .examples {
-            grid-template: repeat(3, auto)/ repeat(2, auto);
+            grid-template: repeat(4, auto)/ repeat(2, auto);
             grid-auto-flow: column;
+
+            .description {
+                grid-column: 1/-1;
+            }
         }
 
         .firstPlayer {
@@ -759,6 +768,7 @@ div[marker='1'] {
             justify-content: center;
             align-items: center;
             gap: 50px 40px;
+            max-width: 1080px;
 
             img {
                 width: 300px;

@@ -155,6 +155,8 @@ table {
     --player2-hover: #ff000079;
     --button-not-selected: #717171;
     --text-on-hover: #379EE3;
+
+    scroll-behavior: smooth;
 }
 
 @font-face {
@@ -417,7 +419,7 @@ div[marker='1'] {
     flex-flow: column nowrap;
     align-items: center;
     text-align: center;
-    gap: 20px;
+    gap: 100px;
     padding: 0 10px;
     font-family: 'Indie_Flower';
     font-size: 1.7rem;
@@ -427,8 +429,9 @@ div[marker='1'] {
         display: flex;
         flex-flow: column nowrap;
         gap: 10px;
-        margin: 30px auto;
         min-width: 85vw;
+        min-height: 100vh;
+        justify-content: center;
 
         button {
             margin: 25px 0 0 0;
@@ -540,6 +543,7 @@ div[marker='1'] {
         align-items: center;
         gap: 15px;
         height: 100vh;
+        position: relative;
 
         img {
             padding: 20px;
@@ -568,6 +572,25 @@ div[marker='1'] {
 
         .title {
             margin: 0 0 20px 0;
+        }
+    }
+
+    .skip {
+        display: none;
+        position: absolute;
+        font-size: 1.25rem;
+        bottom: 30px;
+        right: 0;
+        border: 1px solid var(--negativespace-or-accents);
+        border-radius: 4px;
+        color: var(--negativespace-or-accents);
+        text-decoration: none;
+        padding: 5px 10px 5px 10px;
+
+        &:hover {
+            transition: all 0.2s ease-in-out;
+            background: var(--negativespace-or-accents);
+            color: var(--text-or-background);
         }
     }
 
@@ -642,6 +665,7 @@ div[marker='1'] {
             width: 100%;
             min-width: initial;
             min-height: 100vh;
+            justify-content: initial;
 
             button {
                 grid-area: form_button;

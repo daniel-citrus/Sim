@@ -37,7 +37,6 @@ exitButton.addEventListener('click', () => {
 })
 
 resetButton.addEventListener('click', () => {
-    console.clear();
     director.restartGame();
 });
 
@@ -105,11 +104,9 @@ let bot = (difficulty) => {
         let score = 0;
         let a, b;
 
-        console.log(`Thinking:`);
         for (let move of possibleMoves) {
             board.update(move[0], move[1], botNumber);
             score = minimax(true, botNumber);
-            console.log(`[${move[0]},${move[1]}]: ${score}`);
             board.remove(move[0], move[1]);
 
             if (bestScore < score) {
@@ -443,6 +440,7 @@ const director = (() => {
         initializeValues();
         displayController.hideStarter();
         displayController.showBoard();
+        document.querySelector('.starter .skip').style.display = 'block';
         restartGame();
     }
 

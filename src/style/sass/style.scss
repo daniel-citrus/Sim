@@ -210,12 +210,12 @@ div[marker='1'] {
 
 .game {
     display: none;
-    grid-template: 2fr 7fr 2fr/1fr;
+    grid-template: 2fr 1fr 8fr 2fr/1fr;
     align-items: center;
     max-width: 600px;
     height: calc(100vh - 30px);
     padding: 15px 10px;
-    max-height: 1200px;
+    max-height: 1000px;
     margin: 0 auto;
 
     .board {
@@ -263,11 +263,18 @@ div[marker='1'] {
         gap: 10px;
     }
 
+    .message {
+        font-size: 2rem;
+        color: var(--negativespace-or-accents);
+        font-family: "Fredericka_the_Great";
+        text-align: center;
+    }
+
     .players {
         display: grid;
         grid-template: 1fr / repeat(2, 1fr);
         justify-items: center;
-        font-size: 2rem;
+        font-size: 2.4rem;
         color: var(--negativespace-or-accents);
         font-family: 'Fredericka_the_Great';
     }
@@ -614,11 +621,6 @@ div[marker='1'] {
 }
 
 @media screen and (min-width: 769px) {
-    .board {
-        width: 500px;
-        height: 500px;
-    }
-
     .line {
         height: 500px;
         width: 4px;

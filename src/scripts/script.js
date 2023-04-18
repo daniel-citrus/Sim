@@ -357,10 +357,15 @@ const director = (() => {
     }
 
     let endGame = (winner, losingTriangle) => {
-        winner = (winner) ? 'Red' : 'Blue';
-        console.log(`Winner: ${winner}, Triangle: ${losingTriangle}`);
+        if (gamemode == 'two_player') {
+            winner = (winner) ? 'Red' : 'Blue';
+        }
+        else {
+            winner = (winner) ? 'Computer' : 'Player';
+        }
         displayController.disableBoard();
         displayController.markTriangle(losingTriangle);
+        displayController.displayWinner(winner);
     }
 
     let exitGame = () => {
@@ -471,8 +476,19 @@ const displayController = (() => {
         }
     }
 
+    let clearMessage = () => {
+        let msgDiv = game.querySelector('.message');
+        msgDiv.textContent = '';
+    }
+
     let disableBoard = () => {
         gameBoard.classList.add('disabled');
+    }
+
+    /* Displays the winner of the match */
+    let displayWinner = (winner) => {
+        let winnerDiv = game.querySelector('.message');
+        winnerDiv.textContent = `${winner} has won!`;
     }
 
     let enableBoard = () => {
@@ -516,6 +532,7 @@ const displayController = (() => {
     }
 
     let resetBoard = (firstPlayer) => {
+        clearMessage();
         clearBoard();
         enableBoard();
         updateCurrentPlayer(firstPlayer);
@@ -541,6 +558,7 @@ const displayController = (() => {
         {},
         {
             disableBoard,
+            displayWinner,
             enableBoard,
             hideBoard,
             hideStarter,

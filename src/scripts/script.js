@@ -104,19 +104,18 @@ let bot = (difficulty) => {
         let score = 0;
         let a, b;
 
+        console.clear();
+        console.log('Thinking:');
         for (let move of possibleMoves) {
             board.update(move[0], move[1], botNumber);
             score = minimax(true, botNumber);
             board.remove(move[0], move[1]);
+            console.log(`[${move[0]},${move[1]}]: ${score}`);
 
             if (bestScore < score) {
                 bestScore = score;
                 a = move[0];
                 b = move[1];
-            }
-
-            if (bestScore == 15) {
-                break;
             }
         }
 
@@ -144,7 +143,7 @@ let bot = (difficulty) => {
                 return -movesRemaining;
             }
             else {
-                return 1;
+                return movesRemaining;
             }
         }
 
@@ -335,22 +334,25 @@ const director = (() => {
     }
 
     let botMove = () => {
+        displayController.botToggleGif();
         displayController.disableBoard();
-
+        
         setTimeout(() => {
             let [botA, botB] = myBot.move();
             applyMove(botA, botB);
             let [gameIsOver, losingTriangle] = board.checkLoser(currentPlayer);
-
+            
+            displayController.botToggleGif();
             if (gameIsOver) {
                 endGame(1 - currentPlayer, losingTriangle);
                 return;
             }
-
+            
             currentPlayer = 1 - currentPlayer;
             displayController.updateCurrentPlayer(currentPlayer);
             displayController.enableBoard();
-        }, 1000);
+        }, 2000);
+        displayController.botNewGif();
     }
 
     let endGame = (winner, losingTriangle) => {
@@ -466,6 +468,26 @@ const displayController = (() => {
         })
     }
 
+    /* Select a new gif for bot to use */
+    let botNewGif = () => {
+        let gifs = [
+            'batman.gif',
+            'ha-think.gif',
+            'manifestation.gif',
+            'waiting.gif'
+        ]
+
+        let p2Gif = gamePlayersDiv.querySelector('.gif');
+        let gif = gifs[Math.floor(Math.random() * gifs.length)];
+        p2Gif.style.backgroundImage = `url(/dist/media/gifs/${gif})`;
+    }
+
+    /* Toggle the visibility of bot's gif */
+    let botToggleGif = () => {
+        let p2After = gamePlayersDiv.querySelector('.gif');
+        p2After.style.opacity = (1 - (+p2After.style.opacity));
+    }
+
     let clearBoard = () => {
         for (let line of lines) {
             line.setAttribute('marker', '')
@@ -534,6 +556,7 @@ const displayController = (() => {
         clearBoard();
         enableBoard();
         updateCurrentPlayer(firstPlayer);
+        botNewGif();
         z_index = 0;
     }
 
@@ -555,6 +578,8 @@ const displayController = (() => {
     return Object.assign(
         {},
         {
+            botNewGif,
+            botToggleGif,
             disableBoard,
             displayWinner,
             enableBoard,

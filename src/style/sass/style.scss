@@ -266,7 +266,7 @@ div[marker='1'] {
     }
 
     .message {
-        font-size: 2rem;
+        font-size: 2.4rem;
         color: var(--negativespace-or-accents);
         font-family: "Fredericka_the_Great";
         text-align: center;
@@ -286,6 +286,24 @@ div[marker='1'] {
         text-decoration-style: wavy;
         text-decoration-color: var(--player1-color);
         color: var(--negativespace-or-accents);
+    }
+
+    .player2 {
+        position: relative;
+
+        .gif {
+            position: absolute;
+            top: 55px;
+            left: 15px;
+            height: 85px;
+            width: 141px;
+            border-radius: 3px;
+            transition: all 0.6s ease-in-out;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0;
+        }
     }
 
     &.p2 {

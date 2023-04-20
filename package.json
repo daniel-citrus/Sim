@@ -6,7 +6,7 @@
     "scripts": {
         "sass-dev": "sass --watch --update --style=expanded src/style/sass:dist/style/css",
         "sass-prod": "sass --no-source-map --style=compressed src/style/sass:dist/style/css",
-        "ugly": "uglifyjs src/scripts/script.js --compress --mangle --toplevel --no-annotations -o dist/scripts/main.js",
+        "ugly": "uglifyjs src/scripts/script.js --compress --mangle --no-annotations -o dist/scripts/main.js",
         "code": "npm run sass-dev",
         "build": "npm run sass-prod && npm run ugly"
     },

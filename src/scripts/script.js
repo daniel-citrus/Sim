@@ -104,13 +104,10 @@ let bot = (difficulty) => {
         let score = 0;
         let a, b;
 
-        console.clear();
-        console.log('Thinking:');
         for (let move of possibleMoves) {
             board.update(move[0], move[1], botNumber);
             score = minimax(true, botNumber);
             board.remove(move[0], move[1]);
-            console.log(`[${move[0]},${move[1]}]: ${score}`);
 
             if (bestScore < score) {
                 bestScore = score;
@@ -124,7 +121,7 @@ let bot = (difficulty) => {
 
     /**
         Returns a move score depending on how long it takes the match to end.
-        If the maximizing player wins then minimax will return a score of 1. If the maximizing player loses, the funtion will return a score <= 0.
+        If the maximizing player wins then minimax will return a score >= 0. If the maximizing player loses, the funtion will return a score <= 0.
         The sooner the maximizing player loses, the lower the score.
 
         @param maximize - boolean; maximizing player
@@ -154,20 +151,20 @@ let bot = (difficulty) => {
                 board.update(move[0], move[1], currentPlayer);
                 score = minimax(false, 1 - currentPlayer, alpha, beta);
                 board.remove(move[0], move[1]);
-
+                
                 maxEval = Math.max(maxEval, score);
                 alpha = Math.max(alpha, score);
-
+                
                 if (beta <= alpha) {
                     break;
                 }
             }
-
+            
             return maxEval;
         }
         else {
             let minEval = Number.POSITIVE_INFINITY;
-
+            
             for (let move of possibleMoves) {
                 board.update(move[0], move[1], currentPlayer);
                 score = minimax(true, 1 - currentPlayer, alpha, beta);

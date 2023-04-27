@@ -4,11 +4,11 @@
     "description": "Sim the Pencil Game",
     "main": "index.js",
     "scripts": {
+        "code-css": "npm run sass-dev",
+        "code-js": "webpack --watch",
         "sass-dev": "sass --watch --update --style=expanded src/style/sass:dist/style/css",
         "sass-prod": "sass --no-source-map --style=compressed src/style/sass:dist/style/css",
-        "ugly": "uglifyjs src/scripts/script.js --toplevel --compress --mangle --no-annotations -o dist/scripts/main.js",
-        "code": "npm run sass-dev",
-        "build": "npm run sass-prod && npm run ugly"
+        "build": "npm run sass-prod && webpack"
     },
     "repository": {
         "type": "git",
@@ -22,6 +22,7 @@
     "homepage": "https://github.com/daniel-citrus/Sim#readme",
     "devDependencies": {
         "sass": "^1.61.0",
-        "uglify-js": "^3.17.4"
+        "webpack": "^5.81.0",
+        "webpack-cli": "^5.0.2"
     }
 }

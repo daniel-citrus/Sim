@@ -6,6 +6,7 @@ const game = document.querySelector('.game');
 const gameBoard = game.querySelector('.board');
 const gamePlayersDiv = game.querySelector('.players');
 const lines = document.querySelectorAll('.line');
+const msgDiv = game.querySelector('.message');
 const resetButton = document.getElementById('restartGame');
 const startButton = document.getElementById('startGame');
 const starterForm = document.querySelector('.starter');
@@ -86,7 +87,6 @@ export const displayController = (() => {
     }
 
     let clearMessage = () => {
-        let msgDiv = game.querySelector('.message');
         msgDiv.textContent = '';
     }
 
@@ -96,8 +96,7 @@ export const displayController = (() => {
 
     /* Displays the winner of the match */
     let displayWinner = (winner) => {
-        let winnerDiv = game.querySelector('.message');
-        winnerDiv.textContent = `${winner} has won!`;
+        msgDiv.textContent = `${winner} has won!`;
     }
 
     let enableBoard = () => {
@@ -105,13 +104,7 @@ export const displayController = (() => {
     }
 
     let findLine = (a, b) => {
-        for (let line of lines) {
-            if (line.getAttribute('coordinates') == `${a},${b}`) {
-                return line;
-            }
-        }
-
-        return null;
+        return gameBoard.querySelector(`div[coordinates="${a},${b}"]`);;
     }
 
     /* Mark the losing triangle */

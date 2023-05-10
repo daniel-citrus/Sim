@@ -1,4 +1,4 @@
-import {board} from "./barrel.js";
+import {board} from "Script/barrel.js";
 
 export const bot = (difficulty) => {
     const botNumber = 1; // bot will always have 1 (0 for player)

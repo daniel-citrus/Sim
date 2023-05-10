@@ -1,4 +1,4 @@
-import { director } from "./barrel.js";
+import { director } from "Script/barrel.js";
 
 const exitButton = document.getElementById('exitGame');
 const startFirstPlayer = document.querySelector('.starter .firstPlayer fieldset');

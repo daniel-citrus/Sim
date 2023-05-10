@@ -1,10 +1,15 @@
 export const board = (() => {
+    /*
+        Key/value pair for each line on the board.
+        Examples:
+            (3, 5): 1
+            (1, 2): 0
+    */
     let boardMap = new Map();
     let losingTriangle = [];
 
     /**
-        Checks the entire boardMap for a losing triangle
-        made by currentPlayer
+        Checks if currentPlayer has created a triangle on the board
         @param currentPlayer - player being evaluated
     */
     let checkLoser = (currentPlayer) => {

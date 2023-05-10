@@ -6,4 +6,18 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist/scripts'),
     },
+    resolve: {
+        alias: {
+            Style: path.resolve(__dirname, 'src/style'),
+            Script: path.resolve(__dirname, 'src/scripts'),
+        }
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+        ],
+    },
 };

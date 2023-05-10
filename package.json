@@ -21,8 +21,12 @@
     },
     "homepage": "https://github.com/daniel-citrus/Sim#readme",
     "devDependencies": {
-        "sass": "^1.62.1",
-        "webpack": "^5.82.0",
+        "css-loader": "^6.7.3",
+        "style-loader": "^3.3.2",
+        "webpack": "^5.82.1",
         "webpack-cli": "^5.1.0"
+    },
+    "dependencies": {
+        "sass": "^1.62.1"
     }
 }

@@ -1,4 +1,4 @@
-import { board, bot, displayController } from "./barrel.js";
+import { board, bot, displayController } from "Script/barrel.js";
 
 /* Controls the game flow */
 export const director = (() => {

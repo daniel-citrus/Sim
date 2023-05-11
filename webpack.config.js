@@ -8,7 +8,6 @@ module.exports = {
     },
     resolve: {
         alias: {
-            Style: path.resolve(__dirname, 'src/style'),
             Script: path.resolve(__dirname, 'src/scripts'),
         }
     },

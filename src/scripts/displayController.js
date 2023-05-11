@@ -94,6 +94,29 @@ export const displayController = (() => {
         gameBoard.classList.add('disabled');
     }
 
+    /**
+     * Game buttons must be disabled while the bot is generating a move, 
+     * otherwise the flow of the game will be disrupted.
+     * 
+     * @param enable - leave empty for toggling,TRUE to enable, FALSE to 
+     * disable
+     **/ 
+    let toggleGameButtons = (enable = null) => {
+        let buttons = game.querySelectorAll('.buttons button');
+
+        buttons.forEach((button)=> {
+            if (enable === null) {
+                button.classList.toggle('disabled');
+            }
+            else if (enable) {
+                button.classList.remove('disabled');
+            }
+            else {
+                button.classList.add('disabled');
+            }
+        })
+    }
+
     /* Displays the winner of the match */
     let displayWinner = (winner) => {
         msgDiv.textContent = `${winner} has won!`;
@@ -171,6 +194,7 @@ export const displayController = (() => {
             resetBoard,
             showBoard,
             showStarter,
+            toggleGameButtons,
             updateCurrentPlayer,
             updateMarker
         },

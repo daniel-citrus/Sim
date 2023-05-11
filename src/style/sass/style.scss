@@ -239,6 +239,7 @@ div[marker='1'] {
             }
         }
 
+
         .line:hover {
             background: var(--player1-color);
             z-index: 29;
@@ -263,6 +264,10 @@ div[marker='1'] {
         display: grid;
         grid-template: 1fr / repeat(2, 1fr);
         gap: 10px;
+
+        button.disabled {
+            pointer-events: none;
+        }
     }
 
     .message {
@@ -271,7 +276,7 @@ div[marker='1'] {
         font-family: "Fredericka_the_Great";
         text-align: center;
     }
-    
+
     .players {
         display: grid;
         grid-template: 1fr / repeat(2, 1fr);
@@ -661,12 +666,7 @@ div[marker='1'] {
     }
 }
 
-@media screen and (min-width: 769px) and (min-height: 775px) {
-    .line {
-        height: 500px;
-        width: 4px;
-    }
-
+@media screen and (min-width: 769px) {
     .starter {
         padding: 0 20px;
 
@@ -729,6 +729,13 @@ div[marker='1'] {
         .triangles {
             grid-column: 1/-1;
         }
+    }
+}
+
+@media screen and (min-width: 769px) and (min-height: 775px) {
+    .line {
+        height: 500px;
+        width: 4px;
     }
 
     /* Center Lines */
@@ -825,5 +832,3 @@ div[marker='1'] {
         }
     }
 }
-
-@media screen and (max-height: 700px) {}

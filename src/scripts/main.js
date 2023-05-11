@@ -14,6 +14,7 @@ export const director = (() => {
 
     let botMove = () => {
         displayController.botToggleGif();
+        displayController.toggleGameButtons();
         displayController.disableBoard();
         
         setTimeout(() => {
@@ -22,6 +23,8 @@ export const director = (() => {
             let [gameIsOver, losingTriangle] = board.checkLoser(currentPlayer);
             
             displayController.botToggleGif();
+            displayController.toggleGameButtons();
+
             if (gameIsOver) {
                 endGame(1 - currentPlayer, losingTriangle);
                 return;
@@ -30,7 +33,7 @@ export const director = (() => {
             currentPlayer = 1 - currentPlayer;
             displayController.updateCurrentPlayer(currentPlayer);
             displayController.enableBoard();
-        }, 2000);
+        }, 1500);
         displayController.botNewGif();
     }
 
@@ -42,6 +45,7 @@ export const director = (() => {
             winner = (winner) ? 'Computer' : 'Player';
         }
         displayController.disableBoard();
+        displayController.toggleGameButtons(true);
         displayController.markTriangle(losingTriangle);
         displayController.displayWinner(winner);
     }

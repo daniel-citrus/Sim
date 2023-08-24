@@ -14,23 +14,23 @@ const startGamemode = document.querySelector(`.starter .gamemode fieldset`);
 
 startGamemode.addEventListener('click', (e) => {
     let selected = e.target.value;
+    let player1Form = startFirstPlayer.querySelector(`label[for='first']`);
+    let player2Form = startFirstPlayer.querySelector(`label[for='second']`);
+    let player1Game = gamePlayersDiv.querySelector('.player1');
+    let player2Game = gamePlayersDiv.querySelector('.player2 .name');
 
     if (selected == 'computer') {
-        startFirstPlayer.querySelector(`label[for='first']`).textContent = 'Player';
-        startFirstPlayer.querySelector(`label[for='second']`).textContent = 'Computer';
-
-        gamePlayersDiv.querySelector('.player1').textContent = 'Player';
-        gamePlayersDiv.querySelector('.player2').textContent = 'Computer';
-
+        player1Form.textContent = 'Player';
+        player2Form.textContent = 'Computer';
+        player1Game.textContent = 'Player';
+        player2Game.textContent = 'Computer';
         starterForm.querySelector('.difficulty').classList.remove('disabled');
     }
     else if (selected == 'two_player') {
-        startFirstPlayer.querySelector(`label[for='first']`).textContent = 'Blue';
-        startFirstPlayer.querySelector(`label[for='second']`).textContent = 'Red';
-
-        gamePlayersDiv.querySelector('.player1').textContent = 'Blue';
-        gamePlayersDiv.querySelector('.player2').textContent = 'Red';
-
+        player1Form.textContent = 'Blue';
+        player2Form.textContent = 'Red';
+        player1Game.textContent = 'Blue';
+        player2Game.textContent = 'Red';
         starterForm.querySelector('.difficulty').classList.add('disabled');
     }
 })

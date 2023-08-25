@@ -14,7 +14,7 @@ export const director = (() => {
 
     let botMove = () => {
         displayController.botToggleGif();
-        displayController.toggleGameButtons();
+        displayController.toggleGameButtons(false);
         displayController.disableBoard();
         
         setTimeout(() => {
@@ -23,7 +23,7 @@ export const director = (() => {
             let [gameIsOver, losingTriangle] = board.checkLoser(currentPlayer);
             
             displayController.botToggleGif();
-            displayController.toggleGameButtons();
+            displayController.toggleGameButtons(true);
 
             if (gameIsOver) {
                 endGame(1 - currentPlayer, losingTriangle);
@@ -129,13 +129,10 @@ export const director = (() => {
         restartGame();
     }
 
-    return Object.assign(
-        {},
-        {
-            exitGame,
-            makeMove,
-            restartGame,
-            startGame,
-        },
-    )
+    return {
+        exitGame,
+        makeMove,
+        restartGame,
+        startGame,
+    }
 })();

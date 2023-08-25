@@ -108,15 +108,12 @@ export const board = (() => {
         boardMap.delete(`${a},${b}`);
     }
 
-    return Object.assign(
-        {},
-        {
-            checkLoser,
-            getPossibleMoves,
-            resetBrain,
-            update,
-            remove,
-            boardMap
-        },
-    );
+    return {
+        checkLoser,
+        getPossibleMoves,
+        resetBrain,
+        update,
+        remove,
+        boardMap
+    }
 })();

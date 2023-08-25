@@ -100,15 +100,12 @@ export const displayController = (() => {
      * 
      * @param enable - leave empty for toggling,TRUE to enable, FALSE to 
      * disable
-     **/ 
-    let toggleGameButtons = (enable = null) => {
+     **/
+    let toggleGameButtons = (enable = true) => {
         let buttons = game.querySelectorAll('.buttons button');
 
-        buttons.forEach((button)=> {
-            if (enable === null) {
-                button.classList.toggle('disabled');
-            }
-            else if (enable) {
+        buttons.forEach((button) => {
+            if (enable) {
                 button.classList.remove('disabled');
             }
             else {
@@ -180,23 +177,20 @@ export const displayController = (() => {
         line.style.zIndex = z_index;
     }
 
-    return Object.assign(
-        {},
-        {
-            botNewGif,
-            botToggleGif,
-            disableBoard,
-            displayWinner,
-            enableBoard,
-            hideBoard,
-            hideStarter,
-            markTriangle,
-            resetBoard,
-            showBoard,
-            showStarter,
-            toggleGameButtons,
-            updateCurrentPlayer,
-            updateMarker
-        },
-    )
+    return {
+        botNewGif,
+        botToggleGif,
+        disableBoard,
+        displayWinner,
+        enableBoard,
+        hideBoard,
+        hideStarter,
+        markTriangle,
+        resetBoard,
+        showBoard,
+        showStarter,
+        toggleGameButtons,
+        updateCurrentPlayer,
+        updateMarker
+    }
 })();

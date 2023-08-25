@@ -1,10 +1,10 @@
-import {board} from "Script/barrel.js";
+import { board } from "Script/barrel.js";
 
-export const bot = (difficulty) => {
+export const bot = (difficulty, { getPossibleMoves: getMoves, update, remove, checkLoser } = board,) => {
     const botNumber = 1; // bot will always have 1 (0 for player)
 
     let dumbMove = () => {
-        let possibleMoves = board.getPossibleMoves();
+        let possibleMoves = getMoves();
         let movesRemaining = possibleMoves.length;
 
         if (movesRemaining <= 0) {
@@ -17,7 +17,7 @@ export const bot = (difficulty) => {
     }
 
     let normalMove = () => {
-        let possibleMoves = board.getPossibleMoves();
+        let possibleMoves = getMoves();
         let movesRemaining = possibleMoves.length;
 
         if (movesRemaining <= 0) {
@@ -30,9 +30,9 @@ export const bot = (difficulty) => {
             let rand = getRandomInt(movesRemaining);
             [a, b] = possibleMoves[rand];
 
-            board.update(a, b, botNumber);
-            let [gameIsOver, t] = board.checkLoser(botNumber);
-            board.remove(a, b);
+            update(a, b, botNumber);
+            let [gameIsOver, t] = checkLoser(botNumber);
+            remove(a, b);
 
             if (!gameIsOver) {
                 break;
@@ -46,7 +46,7 @@ export const bot = (difficulty) => {
     }
 
     let smartMove = () => {
-        let possibleMoves = board.getPossibleMoves();
+        let possibleMoves = getMoves();
         let movesRemaining = possibleMoves.length;
 
         if (movesRemaining <= 0) {
@@ -61,9 +61,9 @@ export const bot = (difficulty) => {
         let a, b;
 
         for (let move of possibleMoves) {
-            board.update(move[0], move[1], botNumber);
+            update(move[0], move[1], botNumber);
             score = minimax(true, botNumber);
-            board.remove(move[0], move[1]);
+            remove(move[0], move[1]);
 
             if (bestScore < score) {
                 bestScore = score;
@@ -86,9 +86,9 @@ export const bot = (difficulty) => {
         @param beta - tracks minimizing player's max score
     */
     function minimax(maximize, currentPlayer, alpha, beta) {
-        let possibleMoves = board.getPossibleMoves();
+        let possibleMoves = getMoves();
         let movesRemaining = possibleMoves.length;
-        let [gameOver,] = board.checkLoser(currentPlayer);
+        let [gameOver,] = checkLoser(currentPlayer);
         let score;
 
         if (gameOver) {
@@ -104,9 +104,9 @@ export const bot = (difficulty) => {
             let maxEval = Number.NEGATIVE_INFINITY;
 
             for (let move of possibleMoves) {
-                board.update(move[0], move[1], currentPlayer);
+                update(move[0], move[1], currentPlayer);
                 score = minimax(false, 1 - currentPlayer, alpha, beta);
-                board.remove(move[0], move[1]);
+                remove(move[0], move[1]);
 
                 maxEval = Math.max(maxEval, score);
                 alpha = Math.max(alpha, score);
@@ -122,9 +122,9 @@ export const bot = (difficulty) => {
             let minEval = Number.POSITIVE_INFINITY;
 
             for (let move of possibleMoves) {
-                board.update(move[0], move[1], currentPlayer);
+                update(move[0], move[1], currentPlayer);
                 score = minimax(true, 1 - currentPlayer, alpha, beta);
-                board.remove(move[0], move[1]);
+                remove(move[0], move[1]);
 
                 minEval = Math.min(minEval, score);
                 beta = Math.min(beta, score);
@@ -150,8 +150,5 @@ export const bot = (difficulty) => {
         move = dumbMove;
     }
 
-    return Object.assign(
-        {},
-        { move }
-    )
+    return { move }
 };

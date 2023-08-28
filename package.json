@@ -4,11 +4,8 @@
     "description": "Sim the Pencil Game",
     "main": "index.js",
     "scripts": {
-        "code-css": "npm run sass-dev",
-        "code-js": "webpack --watch --mode=development",
-        "sass-dev": "sass --watch --update --style=expanded src/style/sass:dist/style/css",
-        "sass-prod": "sass --no-source-map --style=compressed src/style/sass:dist/style/css",
-        "build": "npm run sass-prod && webpack --mode=production"
+        "code": "webpack --mode development --watch",
+        "build": "webpack --mode=production"
     },
     "repository": {
         "type": "git",
@@ -22,9 +19,10 @@
     "homepage": "https://github.com/daniel-citrus/Sim#readme",
     "devDependencies": {
         "css-loader": "^6.7.3",
-        "sass": "^1.62.1",
+        "sass": "^1.66.1",
+        "sass-loader": "^13.3.2",
         "style-loader": "^3.3.2",
-        "webpack": "^5.82.1",
+        "webpack": "^5.88.2",
         "webpack-cli": "^5.1.0"
     }
 }

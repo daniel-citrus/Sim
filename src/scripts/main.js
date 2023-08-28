@@ -1,4 +1,5 @@
 import { board, bot, displayController } from "Script/barrel.js";
+import '../style/sass/style.scss';
 
 /* Controls the game flow */
 export const director = (() => {

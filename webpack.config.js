@@ -11,7 +11,7 @@ module.exports = {
     plugins: [new HtmlWebpackPlugin({
         title: 'Sim',
         filename: '../index.html',
-        template: './dist/index_template.html'
+        template: './src/index_template.html'
     })
     ],
     resolve: {

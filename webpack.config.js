@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/scripts/main.js',
@@ -7,6 +8,12 @@ module.exports = {
         path: path.resolve(__dirname, 'dist/scripts'),
         clean: true,
     },
+    plugins: [new HtmlWebpackPlugin({
+        title: 'Sim',
+        filename: '../index.html',
+        template: './dist/index_template.html'
+    })
+    ],
     resolve: {
         alias: {
             Script: path.resolve(__dirname, 'src/scripts'),

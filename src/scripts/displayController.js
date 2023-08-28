@@ -69,7 +69,7 @@ export const displayController = (() => {
 
         let p2Gif = gamePlayersDiv.querySelector('.gif');
         let gif = gifs[Math.floor(Math.random() * gifs.length)];
-        p2Gif.style.backgroundImage = `url(/dist/media/gifs/${gif})`;
+        p2Gif.style.backgroundImage = `url(./media/gifs/${gif})`;
     }
 
     /* Toggle the visibility of bot's gif */

@@ -1,4 +1,4 @@
-# Sim the Pencil Game
+# ![Sim the Pencil Game](https://simthepencilgame.netlify.app/)
 Sim is a two-player game. Each player will take turns coloring any uncolored lines in the play area. The first player to create a triangle loses the match.
 
 ## Rules

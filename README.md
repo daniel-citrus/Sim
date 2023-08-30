@@ -174,5 +174,5 @@ Project Link: [https://github.com/daniel-citrus/Sim](https://github.com/daniel-c
 [sass-url]: https://sass-lang.com/
 [webpack-shield]: https://img.shields.io/badge/Webpack-%238DD6F9?style=for-the-badge&logo=webpack&logoColor=white
 [webpack-url]: https://webpack.js.org/
-[javascript-shield]: hhttps://img.shields.io/badge/Javascript-%232e302c?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
+[javascript-shield]: https://img.shields.io/badge/Javascript-%232e302c?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
 [javascript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript

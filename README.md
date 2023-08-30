@@ -69,7 +69,7 @@ This project aims to demonstrate the use of factory functions, complex algorithm
 
 ### Built With
 
-* [![Javascript][Javascript.com]][Javascript-url]
+* [![Javascript][javascript-shield]][javascript-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -165,5 +165,5 @@ Project Link: [https://github.com/daniel-citrus/Sim](https://github.com/daniel-c
 [linkedin-url]: https://linkedin.com/in/calvo-daniel
 [product-screenshot]: readmefiles/sim%20white_animated.svg
 
-[Javascript]: https://img.shields.io/badge/Javascript-white?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
-[Javascript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+[javascript-shield]: https://img.shields.io/badge/Javascript-white?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
+[javascript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript

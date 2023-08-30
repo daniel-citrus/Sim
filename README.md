@@ -22,15 +22,30 @@ All three corners (ie. vertices) of the triangle must be on the outer edge of th
     <img src="readmefiles/sim white_animated.svg" alt="Sim Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Sim - The Pencil Game</h3>
+<h1 align="center">Sim - The Pencil Game</h1>
   <p align="center">
     Sim is a two-player game. Each player will take turns coloring any uncolored lines in the play area. The first player to create a triangle loses the match. 
+    <br />
+    <h2>Gameplay</h2>
+    <img src="readmefiles/playing.gif" alt="Sim gameplay, players taking turns placing lines">
     <br />
     <h2>Rules</h2>
     <p>
     All three corners (ie. vertices) of the triangle must be on the outer edge of the diagram.
     </p>
+    <h3>
+        Triangle
+    </h3>
+    <img src="readmefiles/Triangle1.png" alt="A losing triangle highlighted on the board">
     <br />
+    <img src="readmefiles/Triangle2.png" alt="A losing triangle highlighted on the board">
+    <br />
+    <h3>
+    Non-Triangle
+    </h3>
+    <img src="readmefiles/NonTriangle1.png" alt="A non-triangle on the board">
+    <br />
+    <img src="readmefiles/NonTriangle2.png" alt="A non-triangle on the board">
     <br />
     <a href="https://simthepencilgame.netlify.app/">Live Demo</a>
   </p>
@@ -111,21 +126,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Todo Item Handler
-    - [ ] Generate todo item (Parameters: Title, Description, Due Date, Priority)
-- [ ] Sets (of Todo Items)
-    - [ ] Store sets containing todo items
-    - [ ] Generate set (empty, or populated with todo items)
-    - [ ] Delete set (use ID)
-    - [ ] Delete todo item from set (use ID)
-- [ ] DOM Features
-    - [ ] Sort by Title, Description, Due Date, or Priority
-    - [ ] Priority color indicator
-    - [ ] Search
-    - [ ] View all projects
-    - [ ] View all todos in each project
-    - [ ] Expand single todo item
-    - [ ] Delete a todo
+- [ ] 
 
 See the [open issues](https://github.com/daniel-citrus/Sim/issues) for a full list of proposed features (and known issues).
 

@@ -39,16 +39,22 @@ All three corners (ie. vertices) of the triangle must be on the outer edge of th
     <h3>
         Triangle
     </h3>
-    <img src="readmefiles/Triangle1.png" alt="A losing triangle highlighted on the board">
-    <br />
-    <img src="readmefiles/Triangle2.png" alt="A losing triangle highlighted on the board">
+    <table border="0">
+ <tr>
+    <td><img src="readmefiles/Triangle1.png" alt="A losing triangle highlighted on the board"></td>
+    <td><img src="readmefiles/Triangle2.png" alt="A losing triangle highlighted on the board"></td>
+ </tr>
+</table>
     <br />
     <h3>
     Non-Triangle
     </h3>
-    <img src="readmefiles/NonTriangle1.png" alt="A non-triangle on the board">
-    <br />
-    <img src="readmefiles/NonTriangle2.png" alt="A non-triangle on the board">
+     <table border="0">
+ <tr>
+    <td><img src="readmefiles/NonTriangle1.png" alt="A non-triangle on the board"></td>
+    <td><img src="readmefiles/NonTriangle2.png" alt="A non-triangle on the board"></td>
+ </tr>
+</table>
     <br />
   </p>
 </div>
@@ -70,11 +76,9 @@ All three corners (ie. vertices) of the triangle must be on the outer edge of th
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -118,19 +122,24 @@ To setup this project locally you must have Node Package Manager ([npm](https://
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- ROADMAP -->
 ## Roadmap
-
-- [ ] 
-
-See the [open issues](https://github.com/daniel-citrus/Sim/issues) for a full list of proposed features (and known issues).
+- [x] Game board
+  - [x] Tracks each line
+  - [x] Check for losing triangles
+  - [x] Add new moves (including player number)
+  - [x] Reset the board
+  - [x] Provide available moves
+- [x] Bot
+  - [x] Random move
+  - [x] Move that does not result in a loss
+  - [x] Efficient move
+- [x] Game Director
+  - [x] Track current player
+  - [x] Controls front-end module
+  - [x] Controls game board
+  - [x] Controls bot
+- [x] Front-end module for UI operations
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -141,25 +150,12 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
 ## Contact
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 <br />
 Project Link: [https://github.com/daniel-citrus/Sim](https://github.com/daniel-citrus/Sim)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

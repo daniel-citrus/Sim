@@ -69,8 +69,8 @@ This project aims to demonstrate the use of factory functions, complex algorithm
 
 ### Built With
 
-*
-*
+* [![HTML5][html5-shield]][html5-url]
+* [![Sass][sass-shield]][sass-url]
 * [![Javascript][javascript-shield]][javascript-url]
 * [![Webpack][webpack-shield]][webpack-url]
 

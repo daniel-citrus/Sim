@@ -168,11 +168,11 @@ Project Link: [https://github.com/daniel-citrus/Sim](https://github.com/daniel-c
 [linkedin-url]: https://linkedin.com/in/calvo-daniel
 [product-screenshot]: readmefiles/sim%20white_animated.svg
 
-[html5-shield]: https://img.shields.io/badge/HTML5-white?style=for-the-badge&logo=html5&logoColor=%23E34F26
+[html5-shield]: https://img.shields.io/badge/HTML5-%23222222?style=for-the-badge&logo=html5&logoColor=%23E34F26
 [html5-url]: https://html.spec.whatwg.org/
 [sass-shield]: https://img.shields.io/badge/SASS-%23CC6699?style=for-the-badge&logo=sass&logoColor=white
 [sass-url]: https://sass-lang.com/
 [webpack-shield]: https://img.shields.io/badge/Webpack-%238DD6F9?style=for-the-badge&logo=webpack&logoColor=white
 [webpack-url]: https://webpack.js.org/
-[javascript-shield]: https://img.shields.io/badge/Javascript-white?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
+[javascript-shield]: hhttps://img.shields.io/badge/Javascript-%232e302c?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
 [javascript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript

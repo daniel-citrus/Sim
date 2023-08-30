@@ -114,6 +114,5 @@ export const board = (() => {
         resetBrain,
         update,
         remove,
-        boardMap
     }
 })();

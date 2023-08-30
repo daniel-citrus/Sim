@@ -110,7 +110,6 @@ export const director = (() => {
         }
     }
 
-
     /* Resets game and allows the bot to make the first move if the option is selected */
     let restartGame = () => {
         currentPlayer = firstPlayer;

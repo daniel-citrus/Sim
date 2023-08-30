@@ -66,14 +66,12 @@ All three corners (ie. vertices) of the triangle must be on the outer edge of th
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Sim Logo][product-screenshot]](https://github.com/daniel-citrus/Sim)
+This project aims to demonstrate the use of factory functions, complex algorithms, data structures, and encapsulation. The Computer opponent uses the Min-max algorithm with alpha-beta pruning to make smart decisions. The level of skill in these decisions vary depending on the selected difficulty.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

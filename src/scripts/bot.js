@@ -3,6 +3,7 @@ import { board } from "Script/barrel.js";
 export const bot = (difficulty, { getPossibleMoves: getMoves, update, remove, checkLoser } = board,) => {
     const botNumber = 1; // bot will always have 1 (0 for player)
 
+    /* A random available move is chosen. */
     let dumbMove = () => {
         let possibleMoves = getMoves();
         let movesRemaining = possibleMoves.length;
@@ -16,6 +17,7 @@ export const bot = (difficulty, { getPossibleMoves: getMoves, update, remove, ch
         return [a, b];
     }
 
+    /* Moves */
     let normalMove = () => {
         let possibleMoves = getMoves();
         let movesRemaining = possibleMoves.length;
@@ -45,6 +47,7 @@ export const bot = (difficulty, { getPossibleMoves: getMoves, update, remove, ch
         return [a, b];
     }
 
+    /* Normal moves are made until there are 10 available moves remaining. Once there are only 10 moves remaining the Min-max algorithm will be used. */
     let smartMove = () => {
         let possibleMoves = getMoves();
         let movesRemaining = possibleMoves.length;

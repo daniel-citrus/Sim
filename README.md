@@ -30,14 +30,11 @@ All three corners (ie. vertices) of the triangle must be on the outer edge of th
     <p>
     All three corners (ie. vertices) of the triangle must be on the outer edge of the diagram.
     </p>
-    <a href="https://github.com/daniel-citrus/Sim"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/daniel-citrus/Sim">Live Demo</a>
+    <a href="https://simthepencilgame.netlify.app/">Live Demo</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -168,5 +165,5 @@ Project Link: [https://github.com/daniel-citrus/Sim](https://github.com/daniel-c
 [linkedin-url]: https://linkedin.com/in/calvo-daniel
 [product-screenshot]: readmefiles/sim%20white_animated.svg
 
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstra&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com

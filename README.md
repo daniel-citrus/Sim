@@ -147,8 +147,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Daniel Calvo - [linkedin-shield](linkedin-url)
-
+Daniel Calvo - [![LinkedIn][linkedin-shield]][linkedin-url]
 Project Link: [https://github.com/daniel-citrus/Sim](https://github.com/daniel-citrus/Sim)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -168,19 +167,9 @@ Project Link: [https://github.com/daniel-citrus/Sim](https://github.com/daniel-c
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/daniel-citrus/Sim.svg?style=for-the-badge
-[contributors-url]: https://github.com/daniel-citrus/Sim/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/daniel-citrus/Sim.svg?style=for-the-badge
-[forks-url]: https://github.com/daniel-citrus/Sim/network/members
-[stars-shield]: https://img.shields.io/github/stars/daniel-citrus/Sim.svg?style=for-the-badge
-[stars-url]: https://github.com/daniel-citrus/Sim/stargazers
-[issues-shield]: https://img.shields.io/github/issues/daniel-citrus/Sim.svg?style=for-the-badge
-[issues-url]: https://github.com/daniel-citrus/Sim/issues
-[license-shield]: https://img.shields.io/github/license/daniel-citrus/Sim.svg?style=for-the-badge
-[license-url]: https://github.com/daniel-citrus/Sim/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/calvo-daniel
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: readmefiles/sim%20white_animated.svg
 
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com

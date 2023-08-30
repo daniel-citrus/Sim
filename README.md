@@ -23,6 +23,7 @@ All three corners (ie. vertices) of the triangle must be on the outer edge of th
   </a>
 
 <h1 align="center">Sim - The Pencil Game</h1>
+<a href="https://simthepencilgame.netlify.app/">Live Demo</a>
   <p align="center">
     Sim is a two-player game. Each player will take turns coloring any uncolored lines in the play area. The first player to create a triangle loses the match. 
     <br />
@@ -47,7 +48,6 @@ All three corners (ie. vertices) of the triangle must be on the outer edge of th
     <br />
     <img src="readmefiles/NonTriangle2.png" alt="A non-triangle on the board">
     <br />
-    <a href="https://simthepencilgame.netlify.app/">Live Demo</a>
   </p>
 </div>
 

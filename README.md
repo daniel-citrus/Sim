@@ -69,7 +69,7 @@ This project aims to demonstrate the use of factory functions, complex algorithm
 
 ### Built With
 
-* [![Javascript][Javascriptcom]][Javascript-url]
+* [![Javascript][Javascript.com]][Javascript-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

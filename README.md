@@ -79,11 +79,11 @@ This project aims to demonstrate the use of factory functions, complex algorithm
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To setup this project locally you must have Node Package Manager installed on your device. 
+To setup this project locally you must have Node Package Manager ([npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)) installed.
 
 ### Prerequisites
 
-* [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+* npm
   ```sh
   npm install npm@latest -g
   ```

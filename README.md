@@ -1,4 +1,4 @@
-
+<!-- 
 ## Rules
 All three corners (ie. vertices) of the triangle must be on the outer edge of the diagram.
 
@@ -13,7 +13,7 @@ All three corners (ie. vertices) of the triangle must be on the outer edge of th
 ## Gameplay
 <img height="200" src="https://raw.githubusercontent.com/daniel-citrus/Sim/main/dist/media/how-to-play/playing.gif">
 
-
+ -->
 <a name="readme-top"></a>
 <!-- PROJECT LOGO -->
 <br />

@@ -19,7 +19,7 @@ All three corners (ie. vertices) of the triangle must be on the outer edge of th
 <br />
 <div align="center">
   <a href="https://github.com/daniel-citrus/Sim">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="readmefiles/sim white_animated.svg" alt="Sim Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Sim - The Pencil Game</h3>
@@ -67,9 +67,7 @@ All three corners (ie. vertices) of the triangle must be on the outer edge of th
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `daniel-citrus`, `Sim`, `twitter_handle`, `calvo-daniel`, `email_client`, `email`, `project_title`, `project_description`
+[![Sim Logo][product-screenshot]](https://github.com/daniel-citrus/Sim)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -147,7 +145,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Daniel Calvo - [![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+<br />
 Project Link: [https://github.com/daniel-citrus/Sim](https://github.com/daniel-citrus/Sim)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

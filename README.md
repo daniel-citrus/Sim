@@ -27,7 +27,7 @@ All three corners (ie. vertices) of the triangle must be on the outer edge of th
     Sim is a two-player game. Each player will take turns coloring any uncolored lines in the play area. The first player to create a triangle loses the match. 
     <br />
     <br />
-    <a href="https://simthepencilgame.netlify.app/">Live Demo</a>
+    <a href="https://main--simthepencilgame.netlify.app/">Live Demo</a>
     <br />
     <h2>Gameplay</h2>
     <img src="readmefiles/playing.gif" alt="Sim gameplay, players taking turns placing lines">
